@@ -14,8 +14,12 @@ function App() {
        {theme === "light" ? t.switchButton : t.switchButtonLight}
       </button>
       <div className='mt-4'>
-        <select value={language} onChange={(e) => changeLanguage(e.target.value)} className="p-2 rounded border">
-          <option value='en'>English</option>
+        <select value={language} onChange={(e) => changeLanguage(e.target.value)} className={`p-2 rounded border ${
+    theme === 'light'
+      ? 'bg-white text-black border-gray-400'
+      : 'bg-gray-800 text-white border-gray-600'
+  }`}>
+          <option  value='en'>English</option>
           <option value='hi'>Hindi</option>
         </select>
      </div>
